@@ -22,8 +22,8 @@ async function privatelistSigner() {
         verifyingContract: process.env.CONTRACT_ID
     };
     const types = {
-        privatelisted: [
-            { name: 'privateAddress', type: 'address' },
+        whitelisted: [
+            { name: 'whiteListAddress', type: 'address' },
             { name: 'isPrivateListed', type: 'bool' },
         ],
 
@@ -49,7 +49,7 @@ async function privatelistSigner() {
             }
             console.log(wallet_address)
             const value = {
-                privateAddress: wallet_address,
+                whiteListAddress: wallet_address,
                 isPrivateListed: true
             };
 
