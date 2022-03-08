@@ -64,3 +64,13 @@ app.post('/privatelist', async (req, res) =>{
         })
 })
 
+app.get('/metadata/:id', async (req, res) =>{
+    console.log(req.params.id)
+    const response = {
+        "description": "Godjira Gen 2", 
+        "external_url": "", 
+        "animation_url": "https://godjira-gen2.s3.ap-south-1.amazonaws.com/OS_reveal_image.mp4", 
+        "name": `Godjira Gen 2 #${req.params.id}`,
+      }
+      return res.send(response) 
+})
