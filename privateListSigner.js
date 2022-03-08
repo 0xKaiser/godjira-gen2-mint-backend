@@ -60,8 +60,9 @@ async function privatelistSigner() {
             let new_signature = new privatelistSchema({
                 address: wallet_address,
                 signature: sign
-            },{upsert: true})
-            await privatelistSchema.findOneAndUpdate(new_signature)
+            })
+            //await privatelistSchema.findOneAndUpdate(new_signature)
+            await new_signature.save()
             console.log(i)
         }
         catch (e) {
